@@ -6,13 +6,13 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class NutrimentsDTO(
     @SerialName("energy-kcal_value")
-    val energyKcalValue: Double?,
+    val energyKcalValue: Double? = 0.0,
     @SerialName("fat_value")
-    val fatValue: Double?,
+    val fatValue: Double? = 0.0,
     @SerialName("sugars_value")
-    val sugarsValue: Double?,
+    val sugarsValue: Double? = 0.0,
     @SerialName("salt_value")
-    val saltValue: Double?,
+    val saltValue: Double? = 0.0,
     @SerialName("proteins_value")
-    val proteinsValue: Double?,
+    val proteinsValue: Double? = 0.0,
 )

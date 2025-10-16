@@ -7,17 +7,17 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class ProductDTO(
     @SerialName("brands")
-    val brands: String?,
+    val brands: String? = "",
     @SerialName("product_name")
-    val productName: String?,
+    val productName: String? = "",
     @SerialName("image_url")
-    val imageUrl: String?,
+    val imageUrl: String? = "",
     @SerialName("ingredients_text")
-    val ingredientsText: String?,
+    val ingredientsText: String? = "",
     @SerialName("nova_groups")
-    val novaGroup: String?,
+    val novaGroup: String? = "",
     @SerialName("nutriscore_grade")
-    val nutriscoreGrade: String?,
+    val nutriscoreGrade: String? = "",
     @SerialName("nutriments")
     val nutriments: NutrimentsDTO?,
 )
