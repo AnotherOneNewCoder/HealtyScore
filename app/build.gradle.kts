@@ -2,6 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.dagger.hilt.android)
+    alias(libs.plugins.kapt)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.androidx.room)
 }
 
 android {
@@ -28,14 +33,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
+    }
+    room {
+        schemaDirectory("$projectDir/schemas")
     }
 }
 
@@ -49,6 +57,23 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.ktor.client.serialization)
+    implementation(libs.ktor.client)
+    implementation(libs.ktor.client.auth)
+    implementation(libs.ktor.client.logging)
+    implementation(libs.ktor.content.negotiation)
+    implementation(libs.dagger.hilt.android)
+    implementation(libs.hilt.navigation)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.javax.inject)
+    implementation(libs.google.code.gson)
+
+    ksp(libs.androidx.room.compiler)
+    api(libs.androidx.room.ktx)
+    kapt(libs.dagger.hilt.compiler)
+
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
