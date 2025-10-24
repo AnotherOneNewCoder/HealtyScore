@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.zhogin.healtyscore.domain.usecases.GetProductDetailFromRemoteUseCase
 import com.zhogin.healtyscore.domain.util.RequestResult
+import com.zhogin.healtyscore.ui.utils.toUIProductDetails
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -42,7 +43,7 @@ class ProductDetailsViewModel @Inject constructor(
                     loading = false,
                     error = false,
                     errorMessage = null,
-                    productDetails = result.data
+                    productDetails = result.data.toUIProductDetails()
                 )
             }
         }
@@ -75,7 +76,7 @@ class ProductDetailsViewModel @Inject constructor(
                             loading = false,
                             error = false,
                             errorMessage = null,
-                            productDetails = result.data
+                            productDetails = result.data.toUIProductDetails()
                         )
                     }
                 }

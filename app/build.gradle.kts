@@ -67,6 +67,18 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.javax.inject)
     implementation(libs.google.code.gson)
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network)
+    implementation(libs.barcode.scanning)
+    implementation(libs.androidx.camerax)
+    implementation(libs.androidx.camerax.lifecycle)
+    implementation(libs.androidx.camerax.view)
+    implementation(libs.accompanist.permissions)
+    implementation(libs.camera.mlkit.vision)
+    implementation(libs.androidx.camera.core)
+
+
+
 
     ksp(libs.androidx.room.compiler)
     api(libs.androidx.room.ktx)

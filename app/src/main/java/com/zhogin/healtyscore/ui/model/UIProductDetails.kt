@@ -1,6 +1,8 @@
-package com.zhogin.healtyscore.domain.model
+package com.zhogin.healtyscore.ui.model
 
-data class ProductDetails(
+import androidx.compose.ui.graphics.Color
+
+data class UIProductDetails(
     val barcode: String,
     val name: String,
     val imageUrl: String?,
@@ -10,5 +12,5 @@ data class ProductDetails(
     val caloriesKcal: Double,
     val fatGrams: Double,
     val sugarsGrams: Double,
-
+    val nutriColor: Color
 )

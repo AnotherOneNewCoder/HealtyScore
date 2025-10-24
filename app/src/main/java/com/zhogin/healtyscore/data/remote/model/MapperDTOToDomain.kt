@@ -7,7 +7,7 @@ fun ProductResponseDTO.toDomain(): ProductDetails {
         barcode = this.code,
         name = this.product?.productName?.trim() ?: "Unknown",
         imageUrl = this.product?.imageUrl,
-        nutriScore = this.product?.nutriscoreGrade?.uppercase() ?: "No data",
+        nutriScore = this.product?.nutriscoreGrade?.trim()?.uppercase()?.first() ?: 'Z',
         novaGroup = this.product?.novaGroup?.toIntOrNull() ?: 0,
         ingredients = this.product?.ingredientsText ?: "No data",
         caloriesKcal = this.product?.nutriments?.energyKcalValue ?: 0.0,
